@@ -1,0 +1,23 @@
+import random
+print("Welcome to the number guessing game 😎")
+print("You have 104 chances to get it right ❤️‍🔥!!!")
+print("All the best ❤️")
+print("I am thinking number between 2 and 100")
+num = random.randint(2,100)
+max_attempts = 10
+attempts = 0
+while attempts < max_attempts:
+    guess=int(input("Enter your guess number:"))
+    attempts += 1
+    if guess == num:
+        print(f"💥You have guessed the number in {attempts} attempts")
+        break
+    elif guess > num:
+        print(f"😶‍🌫️ Too High !!, Try again ❤️")
+    else:
+        print(f"🥲 Too Low !!, Try again ❤️")
+    remaining = max_attempts - attempts
+    print(f"attempts left : {remaining}")
+else:
+    print(f"Your number of attempts have finished \nThe answer is {num} 😁")
+
