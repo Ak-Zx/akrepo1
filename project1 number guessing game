@@ -7,8 +7,14 @@ num = random.randint(2,100)
 max_attempts = 10
 attempts = 0
 while attempts < max_attempts:
-    guess=int(input("Enter your guess number:"))
-    attempts += 1
+    try:
+        guess=int(input("Enter your guess number:"))
+    except ValueError:
+        print("Please enter valid number!")
+    if guess < 2 or guess > 100:
+        print("⚠️ Please enter a number BETWEEN 2 and 100!")
+        continue
+    attempts +=1   
     if guess == num:
         print(f"💥You have guessed the number in {attempts} attempts")
         break
