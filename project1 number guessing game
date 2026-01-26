@@ -10,7 +10,8 @@ while attempts < max_attempts:
     try:
         guess=int(input("Enter your guess number:"))
     except ValueError:
-        print("Please enter valid number!")
+        print("Please enter valid number !")
+        continue
     if guess < 2 or guess > 100:
         print("⚠️ Please enter a number BETWEEN 2 and 100!")
         continue
